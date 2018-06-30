@@ -2,12 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { ListComponent } from './components/list/list.component';
 import { CreateComponent } from './components/create/create.component';
 import { EditComponent } from './components/edit/edit.component';
-
+import { IssueService } from './services/issue.service';
 const routes: Routes = [
   { path: '', redirectTo: '/list', pathMatch: 'full' },
   { path: 'create', component: CreateComponent },
@@ -25,10 +27,14 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    CommonModule,
+    HttpClientModule,
     RouterModule.forRoot(routes),
     MatToolbarModule
   ],
-  providers: [],
+  providers: [
+    IssueService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
