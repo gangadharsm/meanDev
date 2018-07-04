@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -12,13 +11,7 @@ import { ListComponent } from './components/list/list.component';
 import { CreateComponent } from './components/create/create.component';
 import { EditComponent } from './components/edit/edit.component';
 import { IssueService } from './services/issue.service';
-const routes: Routes = [
-  { path: '', redirectTo: '/list', pathMatch: 'full' },
-  { path: 'create', component: CreateComponent },
-  { path: 'edit/:id', component: EditComponent },
-  { path: 'list', component: ListComponent }
-];
-
+import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +26,7 @@ const routes: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterModule.forRoot(routes),
+    AppRoutingModule,
     MatToolbarModule,
     FlexLayoutModule
   ],
