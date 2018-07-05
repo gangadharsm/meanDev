@@ -5,7 +5,14 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatToolbarModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatIconModule,
+  MatListModule,
+  MatSidenavModule,
+  MatToolbarModule
+} from '@angular/material';
+
 import { AppComponent } from './app.component';
 import { ListComponent } from './components/list/list.component';
 import { CreateComponent } from './components/create/create.component';
@@ -27,7 +34,11 @@ import { AppRoutingModule } from './app-routing.module';
     ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,
+    MatIconModule,
+    MatListModule,
     MatToolbarModule,
+    MatSidenavModule,
+    MatButtonModule,
     FlexLayoutModule
   ],
   providers: [
