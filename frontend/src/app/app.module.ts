@@ -17,7 +17,6 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './components/list/list.component';
 import { CreateComponent } from './components/create/create.component';
 import { EditComponent } from './components/edit/edit.component';
-import { IssueService } from './services/issue.service';
 import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [
@@ -41,9 +40,7 @@ import { AppRoutingModule } from './app-routing.module';
     MatButtonModule,
     FlexLayoutModule
   ],
-  providers: [
-    IssueService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
