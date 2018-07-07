@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { IssueService } from '../../services/issue.service';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private issueService: IssueService) {
+    this.issueService.getIssues().subscribe(res=>{
+      console.log(res)
+    })
+   }
 
   ngOnInit() {
   }
