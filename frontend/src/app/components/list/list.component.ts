@@ -6,10 +6,12 @@ import { IssueService } from '../../services/issue.service';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-
+  displayedColumns: string[] = ['Title', 'Responsible', 'Severity', 'status', 'Actions'];
+  dataSource: any=[];
   constructor(private issueService: IssueService) {
     this.issueService.getIssues().subscribe(res=>{
-      console.log(res)
+      console.log(JSON.stringify(res))
+      this.dataSource= res;
     })
    }
 

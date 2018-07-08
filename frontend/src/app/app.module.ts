@@ -10,7 +10,8 @@ import {
   MatIconModule,
   MatListModule,
   MatSidenavModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatTableModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -38,6 +39,7 @@ import { AppRoutingModule } from './app-routing.module';
     MatToolbarModule,
     MatSidenavModule,
     MatButtonModule,
+    MatTableModule,
     FlexLayoutModule
   ],
   providers: [],
