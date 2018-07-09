@@ -6,12 +6,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {
-  MatButtonModule,
-  MatIconModule,
-  MatListModule,
-  MatSidenavModule,
-  MatToolbarModule,
-  MatTableModule
+  MatToolbarModule, 
+  MatFormFieldModule, 
+  MatInputModule, 
+  MatOptionModule, 
+  MatSelectModule, 
+  MatIconModule, 
+  MatButtonModule, 
+  MatCardModule, 
+  MatTableModule, 
+  MatDividerModule, 
+  MatSnackBarModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -34,12 +39,17 @@ import { AppRoutingModule } from './app-routing.module';
     ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,
-    MatIconModule,
-    MatListModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatButtonModule,
-    MatTableModule,
+    MatToolbarModule, 
+    MatFormFieldModule, 
+    MatInputModule, 
+    MatOptionModule, 
+    MatSelectModule, 
+    MatIconModule, 
+    MatButtonModule, 
+    MatCardModule, 
+    MatTableModule, 
+    MatDividerModule, 
+    MatSnackBarModule,
     FlexLayoutModule
   ],
   providers: [],
