@@ -1,21 +1,42 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { MatTableDataSource } from '@angular/material';
 import { IssueService } from '../../services/issue.service';
+import { Issue } from '../../model/issue.model';
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  displayedColumns: string[] = ['Title', 'Responsible', 'Severity', 'status', 'Actions'];
-  dataSource: any=[];
-  constructor(private issueService: IssueService) {
-    this.issueService.getIssues().subscribe(res=>{
-      console.log(JSON.stringify(res))
-      this.dataSource= res;
-    })
+  issues: Issue[];
+  displayedColumns = ['title', 'responsible', 'severity', 'status', 'actions'];
+  constructor(private router: Router,private issueService: IssueService) {
    }
 
   ngOnInit() {
+    this.fetchIssues();
+  }
+
+  fetchIssues() {
+    this.issueService
+      .getIssues()
+      .subscribe((data: Issue[]) => {
+        this.issues = data;
+        console.log('Data requested ...');
+        console.log(this.issues);
+      });
+  }
+
+  editIssue(id) {
+    this.router.navigate([`/edit/${id}`]);
+  }
+
+  deleteIssue(id) {
+    this.issueService.deleteIssue(id).subscribe(() => {
+      this.fetchIssues();
+    });
   }
 
 }
