@@ -16,12 +16,15 @@ export class IssueService {
     };
     return this.http.post(`${this.uri}/issues/add`, issue);
   }
+
   getIssues() {
     return this.http.get(`${this.uri}/issues`);
   }
+
   getIssueById(id) {
     return this.http.get(`${this.uri}/issues/${id}`);
   }
+
   updateIssue(id, title, responsible, description, severity, status) {
     const issue = {
       title: title,
@@ -32,7 +35,9 @@ export class IssueService {
     };
     return this.http.post(`${this.uri}/issues/update/${id}`, issue);
   }
+
   deleteIssue(id) {
     return this.http.get(`${this.uri}/issues/delete/${id}`);
   }
+  
 }
